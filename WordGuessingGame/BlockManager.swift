@@ -25,8 +25,9 @@ class BlockManager {
         self.blockHolder = blockHolder
     }
     
-    func add(_ block: BlockUIView) {
-        blocks.append(block)
+    func add(_ block1: BlockUIView) {
+        let b: BlockUIView = BlockUIView(letter: block1.letterLabel.text!)
+        blocks.append(b)
         
         currentWord = ""
         let screenWidth: CGFloat = UIScreen.main.bounds.size.width
@@ -37,7 +38,7 @@ class BlockManager {
             blockItem.frame.origin = CGPoint(x: x, y: 0)
             x += 50
             currentWord += blockItem.letterLabel.text!
-            blockHolder.addSubview(block)
+            blockHolder.addSubview(b)
         }
         if currentWord == word {
             self.delegate?.wordMatched()

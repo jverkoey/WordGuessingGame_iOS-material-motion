@@ -7,15 +7,17 @@
 //
 
 import UIKit
+import MaterialMotion
 
-class ViewController: UIViewController, BlockUIViewDelegate, BlockManagerDelegate {
+class ViewController: UIViewController, BlockManagerDelegate {
     
+    var runtime: MotionRuntime!
     var blockManager: BlockManager?
     var wordList: WordList = WordList()
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         
+        runtime = MotionRuntime(containerView: view)
         colorAndBorderButton()
         startOver()
     }
@@ -64,7 +66,13 @@ class ViewController: UIViewController, BlockUIViewDelegate, BlockManagerDelegat
         
         for letter in letterArray {
             let block: BlockUIView = BlockUIView(letter: letter)
-            block.delegate = self
+            runtime.add(Draggable(), to: block) {
+                return $0._map(#function) {
+                    let _ = self.didTouchBucket(block, origin: $0)
+                    return .init(x: $0.x, y: $0.y)
+                }
+            }
+            
             self.view.addSubview(block)
         }
     }
@@ -89,6 +97,7 @@ class ViewController: UIViewController, BlockUIViewDelegate, BlockManagerDelegat
             origin.y <= bucketImage.frame.origin.y + bucketImage.frame.size.height
         {
             blockManager!.add(block);
+            block.removeFromSuperview()
             return true;
         }
         return false;

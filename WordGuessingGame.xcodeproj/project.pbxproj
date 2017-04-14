@@ -16,6 +16,7 @@
 		076D7DC71DBAF3F300574471 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D7DBE1DBAF39E00574471 /* HelpViewController.swift */; };
 		076D7DC81DBAF3F300574471 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0732487F1DBAF360003BFC01 /* ViewController.swift */; };
 		076D7DC91DBAF3F300574471 /* WordList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D7DBF1DBAF39E00574471 /* WordList.swift */; };
+		C15511C42782857D032A56A3 /* Pods_WordGuessingGame.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 833D9281DD85A550ABCD4E57 /* Pods_WordGuessingGame.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,9 @@
 		076D7DBD1DBAF39E00574471 /* BlockUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockUIView.swift; sourceTree = "<group>"; };
 		076D7DBE1DBAF39E00574471 /* HelpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 		076D7DBF1DBAF39E00574471 /* WordList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordList.swift; sourceTree = "<group>"; };
+		39C1F663A1BA558883DB8DFC /* Pods-WordGuessingGame.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WordGuessingGame.release.xcconfig"; path = "Pods/Target Support Files/Pods-WordGuessingGame/Pods-WordGuessingGame.release.xcconfig"; sourceTree = "<group>"; };
+		3C711AC47112562C7531ABAB /* Pods-WordGuessingGame.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WordGuessingGame.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WordGuessingGame/Pods-WordGuessingGame.debug.xcconfig"; sourceTree = "<group>"; };
+		833D9281DD85A550ABCD4E57 /* Pods_WordGuessingGame.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WordGuessingGame.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C15511C42782857D032A56A3 /* Pods_WordGuessingGame.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -48,6 +53,8 @@
 			children = (
 				0732487C1DBAF360003BFC01 /* WordGuessingGame */,
 				0732487B1DBAF360003BFC01 /* Products */,
+				F84F0FED8EC8849A2D14F700 /* Pods */,
+				294FF1470094D1F290DDF2FC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -76,6 +83,23 @@
 			path = WordGuessingGame;
 			sourceTree = "<group>";
 		};
+		294FF1470094D1F290DDF2FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				833D9281DD85A550ABCD4E57 /* Pods_WordGuessingGame.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F84F0FED8EC8849A2D14F700 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3C711AC47112562C7531ABAB /* Pods-WordGuessingGame.debug.xcconfig */,
+				39C1F663A1BA558883DB8DFC /* Pods-WordGuessingGame.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -83,9 +107,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0732488C1DBAF361003BFC01 /* Build configuration list for PBXNativeTarget "WordGuessingGame" */;
 			buildPhases = (
+				1B40939C8A7B1FBB6F0C474F /* [CP] Check Pods Manifest.lock */,
 				073248761DBAF360003BFC01 /* Sources */,
 				073248771DBAF360003BFC01 /* Frameworks */,
 				073248781DBAF360003BFC01 /* Resources */,
+				7481FA4D7E0B09AF4734AB92 /* [CP] Embed Pods Frameworks */,
+				6362D7B56F112B88693FA6C4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -103,7 +130,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = Eric;
 				TargetAttributes = {
 					073248791DBAF360003BFC01 = {
@@ -142,6 +169,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1B40939C8A7B1FBB6F0C474F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		6362D7B56F112B88693FA6C4 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WordGuessingGame/Pods-WordGuessingGame-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7481FA4D7E0B09AF4734AB92 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WordGuessingGame/Pods-WordGuessingGame-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		073248761DBAF360003BFC01 /* Sources */ = {
@@ -197,6 +272,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -247,6 +323,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -274,6 +351,7 @@
 		};
 		0732488D1DBAF361003BFC01 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3C711AC47112562C7531ABAB /* Pods-WordGuessingGame.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = WordGuessingGame/Info.plist;
@@ -286,6 +364,7 @@
 		};
 		0732488E1DBAF361003BFC01 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 39C1F663A1BA558883DB8DFC /* Pods-WordGuessingGame.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = WordGuessingGame/Info.plist;
