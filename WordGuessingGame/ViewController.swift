@@ -8,12 +8,15 @@
 
 import UIKit
 import MaterialMotion
+import IndefiniteObservable
 
 class ViewController: UIViewController, BlockManagerDelegate {
     
     var runtime: MotionRuntime!
     var blockManager: BlockManager?
     var wordList: WordList = WordList()
+    
+    var subscription1: Subscription! = nil
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -72,8 +75,13 @@ class ViewController: UIViewController, BlockManagerDelegate {
                     return .init(x: $0.x, y: $0.y)
                 }
             }
-            
             self.view.addSubview(block)
+            
+            subscription1 = runtime.get(block.layer).position.subscribeToValue {
+                (p: CGPoint) in
+                    print(p.x)
+                    print(p.y)
+            }
         }
     }
     
